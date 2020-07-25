@@ -24,7 +24,7 @@ TEMPLATE_DIR = os.path.join(BASE_DIR,'entregar/templates/entregar')
 SECRET_KEY = '+6#%d$i*025a0ro4^v56eyy9y!#y5xpm_t7igl61xop@_30o^*'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 
 ALLOWED_HOSTS = ['delivapp-yoyo.herokuapp.com','127.0.0.1']
