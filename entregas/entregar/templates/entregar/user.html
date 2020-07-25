@@ -1,0 +1,50 @@
+{% extends 'entregar/main.html' %}
+{% block content %}
+{% include 'entregar/status.html'%}
+
+
+
+
+
+
+
+
+<div class="row">
+
+    <div class="col-md">
+        <div class="card card-body">
+            <table class="table table table-striped">
+                <tr>
+                    <a class="btn btn-info active"  class="btm btn-sm btn-Primary" href="#" ><h5>Lista de Pedidos Realizados</h5></a>
+                    <br>
+                    <a class="btn btn-info" class="btm btn-sm btn-Primary" href="{% url 'create_order2' user.customer.id %}">Comprar</a>
+                    <a class="btn ">Antes de Fazer qualquer Pedido deve Preencher a Informacao do Perfil no topo</a>
+
+                    <th>Produto</th>
+                    <th>Imagem</th>
+                    <th>Nota</th>
+                    <th>Data da Encomenda</th>
+                    <th>Status</th>
+                </tr>
+
+
+                {% for order in orders %}
+                <tr>
+                    <td>{{order.product}}</td>
+                    <td><div style="flex:2"><img class="row-image" src="{{ order.product.imageURL }}"></div></td>
+                    <td>{{order.note}}</td>
+                    <td>{{order.date_created}}</td>
+                    <td>{{order.status}}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+
+    </div>
+</div>
+
+<br>
+
+
+
+{% endblock content %}

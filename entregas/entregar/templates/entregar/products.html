@@ -1,0 +1,39 @@
+{% extends 'entregar/main.html' %}
+
+{% load static %}
+
+{% load bootstrap4 %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<br>
+<div class="container">
+	<div class="row">
+		{% for i in products %}
+		<div class="col-lg-4">
+			<img class="thumbnail" src="{{i.imageURL}}">
+			<div class="box-element product">
+				<h6><strong>{{i.name}}</strong></h6>
+				<hr>
+				<button data-produto={{produto.id}} data-action="add" class="btn btn-outline-secondary add-btn update-cart" href="#anchor">Desconto</button>
+				<a class="btn btn-outline-success" href="{% url 'product_detail' i.id %}" >Ver</a>
+				<h4 style="display: inline-block; float: right"><strong>{{i.price|floatformat:2}}Mt</strong></h4>
+
+			</div>
+		</div>
+
+		{% endfor %}
+	</div>
+</div>
+
+<br>
+
+<div class="col-md">
+	<a class="btn btn-info" class="btm btn-sm btn-Primary" href="{% url 'create_order2' user.customer.id %}">Comprar</a>
+	<a class="btn btn-primary">Ou Pode fazer o seu pedido ligando para 846795003</a>
+	<a class="btn btn-warning" href="{% url 'home' %}" id="anchor">&#8592; Voltar ao Menu Principal</a>
+</div>
+
+
+{% endblock content %}
