@@ -27,7 +27,7 @@ SECRET_KEY = '+6#%d$i*025a0ro4^v56eyy9y!#y5xpm_t7igl61xop@_30o^*'
 DEBUG = True
 
 
-ALLOWED_HOSTS = ['iyonissio.herokuapp.com','127.0.0.1']
+ALLOWED_HOSTS = ['delivapp-yoyo.herokuapp.com','127.0.0.1']
 
 
 # Application definition
